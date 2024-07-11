@@ -134,6 +134,8 @@ open_tcp_err:
 	ret
 @msg_err:
 	db "Document fetch error!", 0
+downloading:
+	db "File is downloading now!", 0
 
 gopher_download:
 	call cursor_on
@@ -148,7 +150,13 @@ gopher_download:
 	ld bc, 60
 	ld e, 0
 	MOSCALL mos_editline
+	cp   27
+	jp   z, download_cancel
 	call cursor_off
+
+	call	msg_box
+	ld	hl, downloading
+	call	printZ
 
 	ld c, 0
 	MOSCALL mos_fclose
@@ -171,6 +179,10 @@ download_loop:
 	call tcp_recv
 	jp z, download_exit
 	jr download_loop
+
+download_cancel:
+	call	cursor_off
+	jp	m_back
 
 download_exit:
 	ld de, page_buffer

@@ -5,8 +5,10 @@ MAX_ARGS: EQU 2
 	include "gopher-page.inc"
 	include "gopher.inc"
 	include "top-menu.inc"
+	include "agi.inc"
+	include "binary-handler.inc"
 _main:
-	call vdp_init
+	call show_splash
 
 	call msg_box
 	ld hl, txt_esp
@@ -22,6 +24,8 @@ _main:
 go_home:
 	xor a
 	ld (selected_button), a 
+	ld (history_act), a
+
 	ld hl, home_page
 	ld de, page_buffer
 	ld bc, home_page_end - home_page
@@ -44,4 +48,3 @@ home_page_end:
 	
 	include "history.inc"
 page_buffer:
-	blkb 3,0

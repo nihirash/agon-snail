@@ -93,6 +93,7 @@ save_buffer:
 
 m_back:
 	call history_pull
+	jr z, exit
 	jp gopher_process
 
 domain:
