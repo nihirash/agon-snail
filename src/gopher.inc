@@ -182,8 +182,8 @@ download_loop:
 
 download_cancel:
 	call	cursor_off
-	jp	m_back
-
+	ret
+	
 download_exit:
 	ld de, page_buffer
 	or a
