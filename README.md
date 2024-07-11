@@ -4,7 +4,7 @@
 
 ## Requirements
 
- * Agon Quark(MOS and VDP) 1.04 or later
+ * Fresh Agon Console8 firmware on Agon Light or Agon Console 8
 
  * ESP8266 with Espressif AT firmware. Version should be 1.7.5.0 or later(see updating topic). I'm using [this module](https://www.olimex.com/Products/IoT/ESP8266/MOD-WIFI-ESP8266/open-source-hardware). It can be updated OTA without any issues and you don't need any soldering/using programmers to get your Agon online.
 
@@ -30,11 +30,9 @@
 
 ### Actual usage
 
- * Download `snail.bin` and put it into some directory of Agon's SD card
+ * Copy `snail.bin` to your `/bin/` directory and call it with `snail` command
 
- * Enter directory from MOS and call `LOAD SNAIL.BIN` and `RUN`
-
- * Enjoy gopherspace
+ * If you'll load `.AGI` graphics file - it will be shown on 320x240x64 mode
 
 ## Development
 
