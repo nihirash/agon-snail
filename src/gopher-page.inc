@@ -302,7 +302,7 @@ navigate:
 	jp gopher_loop
 @down:
 	call gopher_extract
-	call gopher_download
+	call process_binary
 	jp   m_back
 @do:
 	call gopher_extract
