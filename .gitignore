@@ -2,3 +2,5 @@ emul/
 emul.sh
 tmp/
 .DS_Store
+ng-src/*.bin
+*.lst
