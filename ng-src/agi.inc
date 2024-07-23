@@ -96,7 +96,9 @@ agi.center_image:
     pop hl
     ret
 
-
+    .if DEV
+    .else
 splash_agi:
 	incbin "binaries/splash.agi"
+    .endif
 	

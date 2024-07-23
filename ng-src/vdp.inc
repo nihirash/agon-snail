@@ -71,6 +71,32 @@ vdp.reinit:
     VDP_CURSOR 0
 @end:
 
+vdp.hide_cursor:
+    SEND_VDP_CMD
+    ret
+@cmd:
+    VDP_CURSOR 0
+@end:
+
+;; BC - coords
+vdp.goto_xy:
+    ld a, 31
+    rst.lil $10
+    
+    ld a, c
+    rst.lil $10
+
+    ld a, b
+    rst.lil $10
+    ret
+
+vdp.set_color:
+    push af
+    ld a, 17
+    rst.lil $10
+    pop af
+    rst.lil $10
+    ret
 
 ;; Restoring videomode, restoring cursor and black and white attributes
 vdp.free:

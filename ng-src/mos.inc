@@ -41,6 +41,15 @@ fa_append:	    equ	$30
 ;; System vars
 mosvar_vdp_mode:    equ $27
 
+;; KeyCodes
+
+KEY_ESC:	equ		27
+KEY_LEFT:	equ 	8
+KEY_RIGHT:	equ		21
+KEY_DOWN:	equ		10
+KEY_UP:		equ		11
+KEY_RET:	equ		13
+
 
 ;; A - character to print
 putc:

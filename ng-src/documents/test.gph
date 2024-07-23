@@ -1,0 +1,254 @@
+iWalnut Creek CP/M CD-ROM: KAYPRO	TITLE	null.host	1
+i================================================================================	/walnut-cpm/KAYPRO/================================================================================	gopher.jblangston.com	70
+i	/walnut-cpm/KAYPRO/	gopher.jblangston.com	70
+iName             Size  Date      Description	/walnut-cpm/KAYPRO/Name             Size  Date      Description	gopher.jblangston.com	70
+i------------     ----  ----      -----------	/walnut-cpm/KAYPRO/------------     ----  ----      -----------	gopher.jblangston.com	70
+0256CRKT.UPD      2824  08-20-86  Corrected 256K Kaypro RAM circuit	/walnut-cpm/KAYPRO/256CRKT.UPD	gopher.jblangston.com	70
+0256NEW.ANS       2611  08-24-86  Answer to Kaypro RAM upgrade problem	/walnut-cpm/KAYPRO/256NEW.ANS	gopher.jblangston.com	70
+984KP256.LBR     26880  08-25-86  256K RAM for the KayPro '84's	/walnut-cpm/KAYPRO/84KP256.LBR	gopher.jblangston.com	70
+984KP256A.ARK    13375  02-14-88  190K RAMdisk for '84 Kaypros - $40	/walnut-cpm/KAYPRO/84KP256A.ARK	gopher.jblangston.com	70
+9ADVENT1.ARK     54784  09-20-86  No description available	/walnut-cpm/KAYPRO/ADVENT1.ARK	gopher.jblangston.com	70
+9ADVENT2.ARK     88704  09-20-86  No description available	/walnut-cpm/KAYPRO/ADVENT2.ARK	gopher.jblangston.com	70
+9ALTDRIVE.LBR    33408  06-05-85  Dynamic re-configuration of DSKDRV	/walnut-cpm/KAYPRO/ALTDRIVE.LBR	gopher.jblangston.com	70
+9ARTIE71.LBR     52352  01-17-88  Block graphic editor for Kaypro	/walnut-cpm/KAYPRO/ARTIE71.LBR	gopher.jblangston.com	70
+9ARTIST.LBR      20352  11-15-86  Drawing program for Kaypro in Turbo	/walnut-cpm/KAYPRO/ARTIST.LBR	gopher.jblangston.com	70
+9AUTOBOOT.ARK     6396  03-13-88  AUTOBOOT.WS & MicroSphere ramdisk	/walnut-cpm/KAYPRO/AUTOBOOT.ARK	gopher.jblangston.com	70
+9AUTOBOOT.WS      7168  07-13-94	/walnut-cpm/KAYPRO/AUTOBOOT.WS	gopher.jblangston.com	70
+9AUTOBOOT.WZ      3968  03-12-88  Tips on auto-start at Kaypro bootup	/walnut-cpm/KAYPRO/AUTOBOOT.WZ	gopher.jblangston.com	70
+9AUTOKEYS.LBR     7168  02-19-88  Configure Kaypro keypad	/walnut-cpm/KAYPRO/AUTOKEYS.LBR	gopher.jblangston.com	70
+9BIOSMR12.LBR    39808  10-07-85  Improved Kaypro BIOS fast/more storg	/walnut-cpm/KAYPRO/BIOSMR12.LBR	gopher.jblangston.com	70
+0BRIEF-SQ.INF     1050  01-19-85  No description available	/walnut-cpm/KAYPRO/BRIEF-SQ.INF	gopher.jblangston.com	70
+0COMMANDS.INF     4992  07-13-94	/walnut-cpm/KAYPRO/COMMANDS.INF	gopher.jblangston.com	70
+9COMMANDS.IQF     3456  02-09-85  No description available	/walnut-cpm/KAYPRO/COMMANDS.IQF	gopher.jblangston.com	70
+0COPY.TXT         2176  07-13-94	/walnut-cpm/KAYPRO/COPY.TXT	gopher.jblangston.com	70
+9COPY.TZT         1408  01-30-88  Kaypro autoboot a command at startup	/walnut-cpm/KAYPRO/COPY.TZT	gopher.jblangston.com	70
+0CPM-BOOK.INF     3584  07-13-94	/walnut-cpm/KAYPRO/CPM-BOOK.INF	gopher.jblangston.com	70
+9CPM-BOOK.IQF     2560  02-09-85  No description available	/walnut-cpm/KAYPRO/CPM-BOOK.IQF	gopher.jblangston.com	70
+9CRHRDSFT.LBR    25088  08-14-86  WordStar <--> ASCII text conversion	/walnut-cpm/KAYPRO/CRHRDSFT.LBR	gopher.jblangston.com	70
+9CURSOR.LBR       4736  05-25-85  No description available	/walnut-cpm/KAYPRO/CURSOR.LBR	gopher.jblangston.com	70
+0DCOM.TXT         1664  07-13-94	/walnut-cpm/KAYPRO/DCOM.TXT	gopher.jblangston.com	70
+9DCOM.TZT         1152  01-30-88  Uncovering some secrets of D.COM	/walnut-cpm/KAYPRO/DCOM.TZT	gopher.jblangston.com	70
+9DIRF37KP.LBR    26624  06-11-86  DIR list includes description	/walnut-cpm/KAYPRO/DIRF37KP.LBR	gopher.jblangston.com	70
+0DKUG-DEC.INF      558  01-19-85  No description available	/walnut-cpm/KAYPRO/DKUG-DEC.INF	gopher.jblangston.com	70
+9DSKDRV13.LBR    56448  06-05-85  No description available	/walnut-cpm/KAYPRO/DSKDRV13.LBR	gopher.jblangston.com	70
+9DUALPORT.LBR     3712  12-21-86  Multiple console displays for Kaypro	/walnut-cpm/KAYPRO/DUALPORT.LBR	gopher.jblangston.com	70
+9DUMP-AT.COM       256  02-09-85  No description available	/walnut-cpm/KAYPRO/DUMP-AT.COM	gopher.jblangston.com	70
+9DUMP10.COM        384  02-09-85  No description available	/walnut-cpm/KAYPRO/DUMP10.COM	gopher.jblangston.com	70
+0DUMP1084.DOC     2992  07-21-84  No description available	/walnut-cpm/KAYPRO/DUMP1084.DOC	gopher.jblangston.com	70
+0DUMP1084.MAC     7552  07-13-94	/walnut-cpm/KAYPRO/DUMP1084.MAC	gopher.jblangston.com	70
+9DUMP1084.MQC     4480  02-09-85  No description available	/walnut-cpm/KAYPRO/DUMP1084.MQC	gopher.jblangston.com	70
+9DUMP24.COM        384  02-09-85  No description available	/walnut-cpm/KAYPRO/DUMP24.COM	gopher.jblangston.com	70
+0DUMP24.DOC       2871  07-21-84  No description available	/walnut-cpm/KAYPRO/DUMP24.DOC	gopher.jblangston.com	70
+0DUMP24.MAC       4992  07-13-94	/walnut-cpm/KAYPRO/DUMP24.MAC	gopher.jblangston.com	70
+9DUMP24.MQC       3328  02-09-85  No description available	/walnut-cpm/KAYPRO/DUMP24.MQC	gopher.jblangston.com	70
+9DUMP484.COM       384  02-09-85  No description available	/walnut-cpm/KAYPRO/DUMP484.COM	gopher.jblangston.com	70
+9DUMPKP1.LBR      8192  03-15-88  Screen dump program for Kaypro 1	/walnut-cpm/KAYPRO/DUMPKP1.LBR	gopher.jblangston.com	70
+9DUMPKP84.COM      384  02-09-85  No description available	/walnut-cpm/KAYPRO/DUMPKP84.COM	gopher.jblangston.com	70
+0DUMPREAD.ME       654  07-21-84  No description available	/walnut-cpm/KAYPRO/DUMPREAD.ME	gopher.jblangston.com	70
+9DVOAK.TQT        2432  06-11-86  No description available	/walnut-cpm/KAYPRO/DVOAK.TQT	gopher.jblangston.com	70
+0DVORAK.TXT       3328  07-13-94	/walnut-cpm/KAYPRO/DVORAK.TXT	gopher.jblangston.com	70
+9FASTTERM.LBR     4608  05-30-85  Fast terminal program for Kaypro	/walnut-cpm/KAYPRO/FASTTERM.LBR	gopher.jblangston.com	70
+0FILER.DTE         830  03-19-88  Perfect Filer patch for date problem	/walnut-cpm/KAYPRO/FILER.DTE	gopher.jblangston.com	70
+9FLTKP100.LBR     4480  12-07-87  Kaypro transfer to/from TRS mod 100	/walnut-cpm/KAYPRO/FLTKP100.LBR	gopher.jblangston.com	70
+0FORMAT.TXT       4608  07-13-94	/walnut-cpm/KAYPRO/FORMAT.TXT	gopher.jblangston.com	70
+9FORMAT.TZT       2688  01-30-88  Disk format options on Kaypros	/walnut-cpm/KAYPRO/FORMAT.TZT	gopher.jblangston.com	70
+9GRAF2K10.LBR    33920  02-09-85  No description available	/walnut-cpm/KAYPRO/GRAF2K10.LBR	gopher.jblangston.com	70
+9GRAFKII.LBR     31488  02-09-85  No description available	/walnut-cpm/KAYPRO/GRAFKII.LBR	gopher.jblangston.com	70
+9HARDDISK.TQT     3840  06-11-86  Add a hard disk to Kaypro-84 models	/walnut-cpm/KAYPRO/HARDDISK.TQT	gopher.jblangston.com	70
+0HARDDISK.TXT     6016  07-13-94	/walnut-cpm/KAYPRO/HARDDISK.TXT	gopher.jblangston.com	70
+9HARDNOTE.TQT     9344  07-13-86  Install harddisk on Kaypro /TurboROM	/walnut-cpm/KAYPRO/HARDNOTE.TQT	gopher.jblangston.com	70
+0HARDNOTE.TXT    15360  07-13-94	/walnut-cpm/KAYPRO/HARDNOTE.TXT	gopher.jblangston.com	70
+0HARNESS.TXT      4096  07-13-94	/walnut-cpm/KAYPRO/HARNESS.TXT	gopher.jblangston.com	70
+9HARNESS.TZT      2432  01-30-88  Wiring harness problems with Kaypros	/walnut-cpm/KAYPRO/HARNESS.TZT	gopher.jblangston.com	70
+9HOTKEY11.LBR    18048  05-18-88  Arrow/keypad redefinition program	/walnut-cpm/KAYPRO/HOTKEY11.LBR	gopher.jblangston.com	70
+9INTPTCH3.LBR     4608  12-04-87  Kaypro FASTTERM/INTTERM improvements	/walnut-cpm/KAYPRO/INTPTCH3.LBR	gopher.jblangston.com	70
+9IOCAPKP.LBR     17408  04-18-86  Captures console output for print	/walnut-cpm/KAYPRO/IOCAPKP.LBR	gopher.jblangston.com	70
+9K-DIAL11.LBR    13824  01-20-87  Phone auto-dialer for Kaypro '84	/walnut-cpm/KAYPRO/K-DIAL11.LBR	gopher.jblangston.com	70
+9K10CHESS.LBR     8320  01-29-88  No description available	/walnut-cpm/KAYPRO/K10CHESS.LBR	gopher.jblangston.com	70
+9K10TIME.LBR      8192  02-09-85  No description available	/walnut-cpm/KAYPRO/K10TIME.LBR	gopher.jblangston.com	70
+9K10Z33.LBR      87808  06-15-88  ZCPR 33 install files for Kaypro 10	/walnut-cpm/KAYPRO/K10Z33.LBR	gopher.jblangston.com	70
+0K16---K2.TXT     1152  07-13-94	/walnut-cpm/KAYPRO/K16---K2.TXT	gopher.jblangston.com	70
+9K16---K2.TZT      640  01-30-88  Connecting a Kaypro 16 to Kaypro 2	/walnut-cpm/KAYPRO/K16---K2.TZT	gopher.jblangston.com	70
+9K1KERM11.LBR    14208  07-16-88  Kermit-80 ver 4.05 - Kaypro 1	/walnut-cpm/KAYPRO/K1KERM11.LBR	gopher.jblangston.com	70
+0K1SCREEN.INF     3072  07-13-94	/walnut-cpm/KAYPRO/K1SCREEN.INF	gopher.jblangston.com	70
+9K1SCREEN.IZF     1792  11-29-87  Video escape sequences for Kaypro 1	/walnut-cpm/KAYPRO/K1SCREEN.IZF	gopher.jblangston.com	70
+9K256BIOS.LBR    48256  06-28-86  Software needed for Kaypro 256K mod	/walnut-cpm/KAYPRO/K256BIOS.LBR	gopher.jblangston.com	70
+9K484TIMR.LBR    20608  02-09-85  No description available	/walnut-cpm/KAYPRO/K484TIMR.LBR	gopher.jblangston.com	70
+9K4SKETCH.LBR    21632  05-04-88  Draw lines and pixels on Kaypro '84	/walnut-cpm/KAYPRO/K4SKETCH.LBR	gopher.jblangston.com	70
+9K4TIME11.LBR     3072  02-09-85  No description available	/walnut-cpm/KAYPRO/K4TIME11.LBR	gopher.jblangston.com	70
+0K4X.DOC          6656  07-13-94	/walnut-cpm/KAYPRO/K4X.DOC	gopher.jblangston.com	70
+9K4X.DZC          3840  03-14-88  Enhancements for Kaypro	/walnut-cpm/KAYPRO/K4X.DZC	gopher.jblangston.com	70
+0K4ZSYSIN.DOC    23424  07-13-94	/walnut-cpm/KAYPRO/K4ZSYSIN.DOC	gopher.jblangston.com	70
+9K4ZSYSIN.DQC    15744  10-01-85  Implementing ZCPR3 on Kaypro 4-84	/walnut-cpm/KAYPRO/K4ZSYSIN.DQC	gopher.jblangston.com	70
+9K83Z33.LBR      81408  06-15-88  ZCPR33 install files for Kaypro 83	/walnut-cpm/KAYPRO/K83Z33.LBR	gopher.jblangston.com	70
+0KAY-DISK.INF     7424  07-13-94	/walnut-cpm/KAYPRO/KAY-DISK.INF	gopher.jblangston.com	70
+9KAY-DISK.IZF     3584  02-22-88  Kaypro floppy disk formats	/walnut-cpm/KAYPRO/KAY-DISK.IZF	gopher.jblangston.com	70
+0KAY256.FIX       1093  08-15-86  Fix to Kaypro 256K RAM disk mod	/walnut-cpm/KAYPRO/KAY256.FIX	gopher.jblangston.com	70
+9KAY256.LBR       8448  05-26-86  Install 256k chips on the Kaypro IV	/walnut-cpm/KAYPRO/KAY256.LBR	gopher.jblangston.com	70
+0KAY256.MSG       1434  06-15-86  No description available	/walnut-cpm/KAYPRO/KAY256.MSG	gopher.jblangston.com	70
+9KAYAK.LBR       22656  01-24-88  Kayak race for Kaypro systems	/walnut-cpm/KAYPRO/KAYAK.LBR	gopher.jblangston.com	70
+9KAYDIAG.LBR     44032  11-29-86  Diagnostics for Kaypro II & IV.	/walnut-cpm/KAYPRO/KAYDIAG.LBR	gopher.jblangston.com	70
+9KAYEASEL.LBR    77824  03-22-87  Electronic graphics easel for Kaypro	/walnut-cpm/KAYPRO/KAYEASEL.LBR	gopher.jblangston.com	70
+9KAYINFO.LBR     15360  11-29-86  Kaypro Information -- Keyboard etc.	/walnut-cpm/KAYPRO/KAYINFO.LBR	gopher.jblangston.com	70
+0KAYMAINT.TXT     4224  07-13-94	/walnut-cpm/KAYPRO/KAYMAINT.TXT	gopher.jblangston.com	70
+9KAYMAINT.TZT     2560  03-16-88  Maintenance tips for Kaypro systems	/walnut-cpm/KAYPRO/KAYMAINT.TZT	gopher.jblangston.com	70
+0KAYPRO.SPD       2789  11-21-83  No description available	/walnut-cpm/KAYPRO/KAYPRO.SPD	gopher.jblangston.com	70
+9KAYPRO10.REV     6074  02-02-84  No description available	/walnut-cpm/KAYPRO/KAYPRO10.REV	gopher.jblangston.com	70
+9KBSHW321.LBR    33152  02-09-85  No description available	/walnut-cpm/KAYPRO/KBSHW321.LBR	gopher.jblangston.com	70
+9KCHRSET1.LBR    13824  11-17-85  No description available	/walnut-cpm/KAYPRO/KCHRSET1.LBR	gopher.jblangston.com	70
+9KP-ARROW.LBR     2304  05-02-88  Change values of Kaypro's arrow keys	/walnut-cpm/KAYPRO/KP-ARROW.LBR	gopher.jblangston.com	70
+9KP-CALUP.LBR    11392  03-05-88  Kaypro phone rolodex/dialing utility	/walnut-cpm/KAYPRO/KP-CALUP.LBR	gopher.jblangston.com	70
+0KP-CBOOT.DOC     4706  07-10-84  No description available	/walnut-cpm/KAYPRO/KP-CBOOT.DOC	gopher.jblangston.com	70
+9KP-EDIT2.LBR    14208  01-31-87  Small WordStar-like editor for Kpro	/walnut-cpm/KAYPRO/KP-EDIT2.LBR	gopher.jblangston.com	70
+9KP-HOST.LBR    118400  07-19-87  Files for remote system on Kaypro	/walnut-cpm/KAYPRO/KP-HOST.LBR	gopher.jblangston.com	70
+9KP-MEMBR.LBR    25088  03-22-87  Database manager for user groups	/walnut-cpm/KAYPRO/KP-MEMBR.LBR	gopher.jblangston.com	70
+0KP-PORTS.INF     2816  07-13-94	/walnut-cpm/KAYPRO/KP-PORTS.INF	gopher.jblangston.com	70
+9KP-PORTS.IQF     1664  02-09-85  No description available	/walnut-cpm/KAYPRO/KP-PORTS.IQF	gopher.jblangston.com	70
+9KP-RADAR.LBR    15360  03-26-88  No description available	/walnut-cpm/KAYPRO/KP-RADAR.LBR	gopher.jblangston.com	70
+0KP-UBIOS.MAC    13440  07-13-94	/walnut-cpm/KAYPRO/KP-UBIOS.MAC	gopher.jblangston.com	70
+9KP-UBIOS.MZC     6784  12-31-86  Kaypro BIOS for 'U' ROM	/walnut-cpm/KAYPRO/KP-UBIOS.MZC	gopher.jblangston.com	70
+9KP-VDUMP.LBR     1024  05-09-87  Screen dump for Graphic-type Kaypro	/walnut-cpm/KAYPRO/KP-VDUMP.LBR	gopher.jblangston.com	70
+0KP-VERSN.TXT     1408  07-13-94	/walnut-cpm/KAYPRO/KP-VERSN.TXT	gopher.jblangston.com	70
+9KP-VERSN.TZT      640  02-20-88  Cross reference of Kaypro ROM/BIOS	/walnut-cpm/KAYPRO/KP-VERSN.TZT	gopher.jblangston.com	70
+9KP-VT52.LBR     27648  09-06-85  VT52 terminal emulator for Kaypro	/walnut-cpm/KAYPRO/KP-VT52.LBR	gopher.jblangston.com	70
+9KP-ZDOS.LBR      9216  06-08-87  Kaypro Self-install CP/M look-alike	/walnut-cpm/KAYPRO/KP-ZDOS.LBR	gopher.jblangston.com	70
+0KP10BIOS.DOC      646  08-26-84  No description available	/walnut-cpm/KAYPRO/KP10BIOS.DOC	gopher.jblangston.com	70
+0KP10BIOS.MAC    17664  07-13-94	/walnut-cpm/KAYPRO/KP10BIOS.MAC	gopher.jblangston.com	70
+9KP10BIOS.MQC    11520  02-09-85  No description available	/walnut-cpm/KAYPRO/KP10BIOS.MQC	gopher.jblangston.com	70
+9KP10MONY.LBR    64640  02-21-87  Money management package - Kaypro10	/walnut-cpm/KAYPRO/KP10MONY.LBR	gopher.jblangston.com	70
+9KP10USER.LBR     3200  02-06-87  MASMENU replacement for Kaypro 10	/walnut-cpm/KAYPRO/KP10USER.LBR	gopher.jblangston.com	70
+9KP2-EDIT.LBR     6784  06-08-86  VDO-like text editor for Kaypro	/walnut-cpm/KAYPRO/KP2-EDIT.LBR	gopher.jblangston.com	70
+9KP4TIME2.LBR    13824  02-09-85  No description available	/walnut-cpm/KAYPRO/KP4TIME2.LBR	gopher.jblangston.com	70
+9KPARKPAT.ARK    14495  06-04-88  Patch ARK02.COM for '84 Kaypro RTC	/walnut-cpm/KAYPRO/KPARKPAT.ARK	gopher.jblangston.com	70
+9KPBUMPER.ARK    13409  12-04-87  No description available	/walnut-cpm/KAYPRO/KPBUMPER.ARK	gopher.jblangston.com	70
+9KPBYE5.LBR      23040  06-03-87  RCP/M system for Kaypro	/walnut-cpm/KAYPRO/KPBYE5.LBR	gopher.jblangston.com	70
+9KPCLICK.LBR      1536  01-23-88  Turn keyboard click on/off on Kaypros	/walnut-cpm/KAYPRO/KPCLICK.LBR	gopher.jblangston.com	70
+0KPCLOCK.INF       914  01-19-85  No description available	/walnut-cpm/KAYPRO/KPCLOCK.INF	gopher.jblangston.com	70
+9KPCUR20.LBR      3072  07-28-87  Set shape of Kaypro cursor	/walnut-cpm/KAYPRO/KPCUR20.LBR	gopher.jblangston.com	70
+9KPCW.LBR         4736  05-22-86  Morse code practice using Kaypro	/walnut-cpm/KAYPRO/KPCW.LBR	gopher.jblangston.com	70
+9KPDD10.LBR       2432  07-29-87  Directory utility for the Kaypro	/walnut-cpm/KAYPRO/KPDD10.LBR	gopher.jblangston.com	70
+9KPDEV.LBR        6272  11-10-86  Connecting printers, peripherals	/walnut-cpm/KAYPRO/KPDEV.LBR	gopher.jblangston.com	70
+9KPDIAG.LBR      50048  10-01-86  Diagnostic utilities for the Kaypro	/walnut-cpm/KAYPRO/KPDIAG.LBR	gopher.jblangston.com	70
+9KPEDFONT.LBR    14592  05-16-88  Editor for Bradford font files	/walnut-cpm/KAYPRO/KPEDFONT.LBR	gopher.jblangston.com	70
+9KPENG13.LBR     15616  05-31-87  Disk analysis program for Kaypro	/walnut-cpm/KAYPRO/KPENG13.LBR	gopher.jblangston.com	70
+9KPFIXSEL.AQM     1536  12-11-86  Patch for select error on Kaypro	/walnut-cpm/KAYPRO/KPFIXSEL.AQM	gopher.jblangston.com	70
+0KPFIXSEL.ASM     2176  07-13-94	/walnut-cpm/KAYPRO/KPFIXSEL.ASM	gopher.jblangston.com	70
+9KPGRAFIC.TQT    13568  10-01-86  Info about graphics on the Kaypro	/walnut-cpm/KAYPRO/KPGRAFIC.TQT	gopher.jblangston.com	70
+0KPGRAFIC.TXT    22656  07-13-94	/walnut-cpm/KAYPRO/KPGRAFIC.TXT	gopher.jblangston.com	70
+9KPGRFCL1.LBR     3072  12-07-86  A graphic clock for the Kaypro	/walnut-cpm/KAYPRO/KPGRFCL1.LBR	gopher.jblangston.com	70
+9KPIMP245.LBR    17664  07-03-87  IMP 245 for Kayrpo with Avatex modem	/walnut-cpm/KAYPRO/KPIMP245.LBR	gopher.jblangston.com	70
+0KPINTRPT.MSG     1107  11-24-84  No description available	/walnut-cpm/KAYPRO/KPINTRPT.MSG	gopher.jblangston.com	70
+9KPKBD.LBR        3072  12-31-86  Printable Kaypro keyboard templets	/walnut-cpm/KAYPRO/KPKBD.LBR	gopher.jblangston.com	70
+9KPKER405.LBR    28160  03-22-87  No description available	/walnut-cpm/KAYPRO/KPKER405.LBR	gopher.jblangston.com	70
+9KPLD517U.LBR    26112  08-19-87  Kaypro video text file display	/walnut-cpm/KAYPRO/KPLD517U.LBR	gopher.jblangston.com	70
+9KPLTIME.AQM      8832  10-21-86  TIME program for Kaypro with Legacy	/walnut-cpm/KAYPRO/KPLTIME.AQM	gopher.jblangston.com	70
+0KPLTIME.ASM     13312  07-13-94	/walnut-cpm/KAYPRO/KPLTIME.ASM	gopher.jblangston.com	70
+0KPMOVCPM.DOC     9600  07-13-94	/walnut-cpm/KAYPRO/KPMOVCPM.DOC	gopher.jblangston.com	70
+9KPMOVCPM.DZC     5120  12-28-86  Problems with Kaypro MOVCPM	/walnut-cpm/KAYPRO/KPMOVCPM.DZC	gopher.jblangston.com	70
+9KPNEWTRM.LBR    16256  01-31-88  Kaypro interrupt driven termnial pgm	/walnut-cpm/KAYPRO/KPNEWTRM.LBR	gopher.jblangston.com	70
+9KPNUROM.LBR     61312  01-27-87  Enhanced ROM for '83 Kaypros	/walnut-cpm/KAYPRO/KPNUROM.LBR	gopher.jblangston.com	70
+9KPPATCH.AQM      2432  02-09-85  No description available	/walnut-cpm/KAYPRO/KPPATCH.AQM	gopher.jblangston.com	70
+0KPPATCH.ASM      3328  07-13-94	/walnut-cpm/KAYPRO/KPPATCH.ASM	gopher.jblangston.com	70
+9KPRAMDSK.LBR    13696  12-25-87  Add 256K RAM disk to Kaypro '84	/walnut-cpm/KAYPRO/KPRAMDSK.LBR	gopher.jblangston.com	70
+9KPRESET.LBR      1920  06-05-85  No description available	/walnut-cpm/KAYPRO/KPRESET.LBR	gopher.jblangston.com	70
+0KPRO-8IN.INF      601  01-19-85  No description available	/walnut-cpm/KAYPRO/KPRO-8IN.INF	gopher.jblangston.com	70
+0KPRO-BBS.MSG      978  06-03-84  No description available	/walnut-cpm/KAYPRO/KPRO-BBS.MSG	gopher.jblangston.com	70
+0KPRO-BOS.INF     1054  01-19-85  No description available	/walnut-cpm/KAYPRO/KPRO-BOS.INF	gopher.jblangston.com	70
+0KPRO-LAN.INF     1420  01-19-85  No description available	/walnut-cpm/KAYPRO/KPRO-LAN.INF	gopher.jblangston.com	70
+0KPRO-NET.INF     1850  01-19-85  No description available	/walnut-cpm/KAYPRO/KPRO-NET.INF	gopher.jblangston.com	70
+0KPRO-VID.INF      897  01-19-85  No description available	/walnut-cpm/KAYPRO/KPRO-VID.INF	gopher.jblangston.com	70
+0KPROCNFG.DOC     1524  09-09-83  No description available	/walnut-cpm/KAYPRO/KPROCNFG.DOC	gopher.jblangston.com	70
+9KPRODEMO.LBR     6784  01-24-88  Connect six Kaypros for demos	/walnut-cpm/KAYPRO/KPRODEMO.LBR	gopher.jblangston.com	70
+0KPROLIST.BUG     1454  01-19-84  No description available	/walnut-cpm/KAYPRO/KPROLIST.BUG	gopher.jblangston.com	70
+0KPROTERM.INF     1794  01-19-85  No description available	/walnut-cpm/KAYPRO/KPROTERM.INF	gopher.jblangston.com	70
+9KPRULE25.LBR     5888  03-07-87  Put column rule on Kaypro 25th line	/walnut-cpm/KAYPRO/KPRULE25.LBR	gopher.jblangston.com	70
+9KPSETKEY.LBR     3328  10-01-86  Keypad re-definer for Kaypro	/walnut-cpm/KAYPRO/KPSETKEY.LBR	gopher.jblangston.com	70
+0KPSPEED.INF       828  01-19-85  No description available	/walnut-cpm/KAYPRO/KPSPEED.INF	gopher.jblangston.com	70
+9KPTRCLK.LBR      2176  02-22-87  Caption for TurboRom time display	/walnut-cpm/KAYPRO/KPTRCLK.LBR	gopher.jblangston.com	70
+9KPU87MOD.INF     2048  07-13-94	/walnut-cpm/KAYPRO/KPU87MOD.INF	gopher.jblangston.com	70
+9KPU87MOD.IQF     1378  01-10-88  Fix on early Kaypros for data errors	/walnut-cpm/KAYPRO/KPU87MOD.IQF	gopher.jblangston.com	70
+9KPVID.LBR        2304  08-12-87  Kaypro programs use screen functions	/walnut-cpm/KAYPRO/KPVID.LBR	gopher.jblangston.com	70
+9KPVLU102.LBR    26752  01-24-88  Video library utility for Kaypros	/walnut-cpm/KAYPRO/KPVLU102.LBR	gopher.jblangston.com	70
+0KRAMDISK.TXT    47104  07-13-94	/walnut-cpm/KAYPRO/KRAMDISK.TXT	gopher.jblangston.com	70
+9KRAMDISK.TZT    22656  02-26-87  Make most of Kaypro with a RAM disk	/walnut-cpm/KAYPRO/KRAMDISK.TZT	gopher.jblangston.com	70
+0KSCREEN.INF      1954  11-15-87  No description available	/walnut-cpm/KAYPRO/KSCREEN.INF	gopher.jblangston.com	70
+9KVIDTEX.LBR     32512  07-05-87  No description available	/walnut-cpm/KAYPRO/KVIDTEX.LBR	gopher.jblangston.com	70
+0LAZY.TXT         5504  07-13-94	/walnut-cpm/KAYPRO/LAZY.TXT	gopher.jblangston.com	70
+9LAZY.TZT         2816  01-30-88  Fewer keystrokes for lazy Kuggers	/walnut-cpm/KAYPRO/LAZY.TZT	gopher.jblangston.com	70
+0LINE25KP.DOC     1764  01-30-84  No description available	/walnut-cpm/KAYPRO/LINE25KP.DOC	gopher.jblangston.com	70
+9M100-KP.ARK     22016  07-06-87  Kaypro <--> TRS100 file transfers	/walnut-cpm/KAYPRO/M100-KP.ARK	gopher.jblangston.com	70
+0MASMENU.TXT      1920  07-13-94	/walnut-cpm/KAYPRO/MASMENU.TXT	gopher.jblangston.com	70
+9MASMENU.TZT      1280  01-30-88  Thoughts on Kaypro's master menus	/walnut-cpm/KAYPRO/MASMENU.TZT	gopher.jblangston.com	70
+9METAKEYS.LBR    12288  06-14-87  Redefine Kaypro's vector keys/keypad	/walnut-cpm/KAYPRO/METAKEYS.LBR	gopher.jblangston.com	70
+0MFDISK.INF       1757  02-02-84  No description available	/walnut-cpm/KAYPRO/MFDISK.INF	gopher.jblangston.com	70
+9MFDISK10.COM    21888  02-09-85  No description available	/walnut-cpm/KAYPRO/MFDISK10.COM	gopher.jblangston.com	70
+9MFDISK2.COM     21632  02-09-85  No description available	/walnut-cpm/KAYPRO/MFDISK2.COM	gopher.jblangston.com	70
+9MFDISK4.COM     22272  02-09-85  No description available	/walnut-cpm/KAYPRO/MFDISK4.COM	gopher.jblangston.com	70
+9NCCP84.LBR      10112  12-11-86  CCP replacement for Kaypro 4-84	/walnut-cpm/KAYPRO/NCCP84.LBR	gopher.jblangston.com	70
+9NDSKMSTR.LBR    39424  11-16-85  No description available	/walnut-cpm/KAYPRO/NDSKMSTR.LBR	gopher.jblangston.com	70
+9NEWRITKP.LBR    22912  12-27-86  Formatter for TOUR20	/walnut-cpm/KAYPRO/NEWRITKP.LBR	gopher.jblangston.com	70
+9NORING.LBR      10496  02-28-89  Set Kaypro internal mdm answer mode	/walnut-cpm/KAYPRO/NORING.LBR	gopher.jblangston.com	70
+0NSWP2-KP.INF     1810  03-18-84  No description available	/walnut-cpm/KAYPRO/NSWP2-KP.INF	gopher.jblangston.com	70
+9OUTLINER.LBR    49792  09-21-87  Text outline processor	/walnut-cpm/KAYPRO/OUTLINER.LBR	gopher.jblangston.com	70
+9PAIRP.LBR        3200  12-21-86  Finds un-paired chars in PW files.	/walnut-cpm/KAYPRO/PAIRP.LBR	gopher.jblangston.com	70
+0PCALC110.PAT     2688  07-13-94	/walnut-cpm/KAYPRO/PCALC110.PAT	gopher.jblangston.com	70
+9PCALC110.PZT     1408  03-05-88  Use reverse video with Perfect Calc	/walnut-cpm/KAYPRO/PCALC110.PZT	gopher.jblangston.com	70
+9PF2ASC.LBR      21120  04-19-88  Convert Perfect Filer files to ASCII	/walnut-cpm/KAYPRO/PF2ASC.LBR	gopher.jblangston.com	70
+9PFCTWRTR.LBR    72960  12-02-86  PD Utils for Perfect Writer.	/walnut-cpm/KAYPRO/PFCTWRTR.LBR	gopher.jblangston.com	70
+0PFLINES.TXT       896  07-13-94	/walnut-cpm/KAYPRO/PFLINES.TXT	gopher.jblangston.com	70
+9PFLINES.TZT       640  01-30-88  Perfect Filer carriage returns	/walnut-cpm/KAYPRO/PFLINES.TZT	gopher.jblangston.com	70
+9PHN21.LBR        4480  04-27-86  Modem Dialer and number lister	/walnut-cpm/KAYPRO/PHN21.LBR	gopher.jblangston.com	70
+9PIX11.LBR        6144  01-24-87  Play with Kaypro graphics	/walnut-cpm/KAYPRO/PIX11.LBR	gopher.jblangston.com	70
+9PRFCLCUT.LBR    61824  12-21-86  Utilities for Perfect Calc	/walnut-cpm/KAYPRO/PRFCLCUT.LBR	gopher.jblangston.com	70
+9PRFTCALC.LBR    30848  12-21-86  Utilities for Perfect Calc	/walnut-cpm/KAYPRO/PRFTCALC.LBR	gopher.jblangston.com	70
+9PROFILES.LBR    27904  11-11-86  Index of PROFILE articles - June, 85	/walnut-cpm/KAYPRO/PROFILES.LBR	gopher.jblangston.com	70
+0PW-SWAP.INF      1860  01-19-85  No description available	/walnut-cpm/KAYPRO/PW-SWAP.INF	gopher.jblangston.com	70
+0PW.TXT           1536  07-13-94	/walnut-cpm/KAYPRO/PW.TXT	gopher.jblangston.com	70
+9PW.TZT           1024  01-30-88  Printing PW documents	/walnut-cpm/KAYPRO/PW.TZT	gopher.jblangston.com	70
+0PWCOMNDS.INF     5760  07-13-94	/walnut-cpm/KAYPRO/PWCOMNDS.INF	gopher.jblangston.com	70
+9PWCOMNDS.IQF     3968  02-09-85  No description available	/walnut-cpm/KAYPRO/PWCOMNDS.IQF	gopher.jblangston.com	70
+9QC10-V13.LBR    15744  10-13-85  No description available	/walnut-cpm/KAYPRO/QC10-V13.LBR	gopher.jblangston.com	70
+9RAMTOOLS.LBR    24576  05-05-87  RAM resident utility for Kaypro 4'84	/walnut-cpm/KAYPRO/RAMTOOLS.LBR	gopher.jblangston.com	70
+0RCP-BEST.INF     6784  07-13-94	/walnut-cpm/KAYPRO/RCP-BEST.INF	gopher.jblangston.com	70
+9RCP-BEST.IQF     4480  02-09-85  No description available	/walnut-cpm/KAYPRO/RCP-BEST.IQF	gopher.jblangston.com	70
+0REALTIME.TXT     1664  07-13-94	/walnut-cpm/KAYPRO/REALTIME.TXT	gopher.jblangston.com	70
+9REALTIME.TZT     1152  01-30-88  Accessing real time clock in Kaypros	/walnut-cpm/KAYPRO/REALTIME.TZT	gopher.jblangston.com	70
+0RESTART.INF      1071  01-19-85  No description available	/walnut-cpm/KAYPRO/RESTART.INF	gopher.jblangston.com	70
+9SAVECRT.LBR      5120  08-23-86  Turns off screen on video Kaypro	/walnut-cpm/KAYPRO/SAVECRT.LBR	gopher.jblangston.com	70
+9SD-QUIET.LBR    10752  01-24-87  SD mod to quiet Kaypro 2-84 keyboard	/walnut-cpm/KAYPRO/SD-QUIET.LBR	gopher.jblangston.com	70
+9SETKP-IO.LBR    20480  01-24-87  Set Kaypro modem/printer serial port	/walnut-cpm/KAYPRO/SETKP-IO.LBR	gopher.jblangston.com	70
+9SHAFT.LBR        2944  12-04-87  Demonstration of graphics on Kaypro	/walnut-cpm/KAYPRO/SHAFT.LBR	gopher.jblangston.com	70
+9SIDEARM.LBR     15616  03-08-87  Limited notepad SideArm demo	/walnut-cpm/KAYPRO/SIDEARM.LBR	gopher.jblangston.com	70
+9SKIPMAP.LBR     23296  04-19-88  Skip rebuilding of allocation table	/walnut-cpm/KAYPRO/SKIPMAP.LBR	gopher.jblangston.com	70
+9SSTAT-KP.LBR     7680  03-15-88  STAT replacement for Kaypros	/walnut-cpm/KAYPRO/SSTAT-KP.LBR	gopher.jblangston.com	70
+9STATLINE.LBR    15104  11-22-86  Turn Kaypro status line On/Off	/walnut-cpm/KAYPRO/STATLINE.LBR	gopher.jblangston.com	70
+9SWCOPY23.LBR    13056  02-09-85  Single drive file copy program	/walnut-cpm/KAYPRO/SWCOPY23.LBR	gopher.jblangston.com	70
+9TDD.LBR         38656  12-28-86  Kaypro Telecommuncation for the Deaf	/walnut-cpm/KAYPRO/TDD.LBR	gopher.jblangston.com	70
+9TINKERK2.LBR    77184  10-01-86  No description available	/walnut-cpm/KAYPRO/TINKERK2.LBR	gopher.jblangston.com	70
+9TINKR484.LBR   107648  10-01-86  No description available	/walnut-cpm/KAYPRO/TINKR484.LBR	gopher.jblangston.com	70
+9TOON12.LBR      13568  12-13-86  Kaypro II-'83 save screen to disk	/walnut-cpm/KAYPRO/TOON12.LBR	gopher.jblangston.com	70
+9TRANSKP4.LBR    41472  07-13-86  Transfer files between CP/M & MS-DOS	/walnut-cpm/KAYPRO/TRANSKP4.LBR	gopher.jblangston.com	70
+9TROMHINT.LBR     2304  06-29-86  Advent TurboROM Kaypro video speedup	/walnut-cpm/KAYPRO/TROMHINT.LBR	gopher.jblangston.com	70
+9TROMPAT1.LBR    66432  07-13-86  No description available	/walnut-cpm/KAYPRO/TROMPAT1.LBR	gopher.jblangston.com	70
+9TRPATCH1.LBR    27648  07-15-86  Patch software on Kaypro w/TurboROM	/walnut-cpm/KAYPRO/TRPATCH1.LBR	gopher.jblangston.com	70
+9TRS2KPRO.TQT     3712  09-12-86  Pass data from Kaypro to TRS mod 100	/walnut-cpm/KAYPRO/TRS2KPRO.TQT	gopher.jblangston.com	70
+0TRS2KPRO.TXT     5504  07-13-94	/walnut-cpm/KAYPRO/TRS2KPRO.TXT	gopher.jblangston.com	70
+9TRSTATLN.LBR     8832  07-13-86  Enable/disable 25th line w/TurboROM	/walnut-cpm/KAYPRO/TRSTATLN.LBR	gopher.jblangston.com	70
+9TURBKPEX.LBR     1792  07-13-86  Forces cold boot for harddisk start	/walnut-cpm/KAYPRO/TURBKPEX.LBR	gopher.jblangston.com	70
+0TURBOROM.DOC    48384  07-13-94	/walnut-cpm/KAYPRO/TURBOROM.DOC	gopher.jblangston.com	70
+9TURBOROM.DQC    24064  07-13-86  Theory of the TurboROM's operation	/walnut-cpm/KAYPRO/TURBOROM.DQC	gopher.jblangston.com	70
+9TURBOSAF.LBR     6016  07-13-86  PARK heads of harddisk w/TurboROM	/walnut-cpm/KAYPRO/TURBOSAF.LBR	gopher.jblangston.com	70
+0TURBOSCR.INF     2048  07-13-94	/walnut-cpm/KAYPRO/TURBOSCR.INF	gopher.jblangston.com	70
+9TURBOSCR.IQF     1664  11-11-86  'Slow screen' problem with TurboROM	/walnut-cpm/KAYPRO/TURBOSCR.IQF	gopher.jblangston.com	70
+9TYPEKP84.LBR    38528  03-20-88  Touch typing tutor for Kaypro '84	/walnut-cpm/KAYPRO/TYPEKP84.LBR	gopher.jblangston.com	70
+0UROMKEYS.ASM     5632  07-13-94	/walnut-cpm/KAYPRO/UROMKEYS.ASM	gopher.jblangston.com	70
+9UROMKEYS.AZM     3456  12-31-86  Redefine function keys on Kaypro 'U'	/walnut-cpm/KAYPRO/UROMKEYS.AZM	gopher.jblangston.com	70
+9VDE-FIX.LBR      2432  01-27-88  No description available	/walnut-cpm/KAYPRO/VDE-FIX.LBR	gopher.jblangston.com	70
+9VT100KAY.LBR    16768  08-23-87  VT100 emulator for Kaypro	/walnut-cpm/KAYPRO/VT100KAY.LBR	gopher.jblangston.com	70
+9WS-KP25P.LBR    19072  12-21-86  IBM-style help line for Kaypro WS	/walnut-cpm/KAYPRO/WS-KP25P.LBR	gopher.jblangston.com	70
+0WS-UROM.FIX      3584  07-13-94	/walnut-cpm/KAYPRO/WS-UROM.FIX	gopher.jblangston.com	70
+9WS-UROM.FQX      2560  08-16-86  Patch to WordStar for Z-system BIOS	/walnut-cpm/KAYPRO/WS-UROM.FQX	gopher.jblangston.com	70
+9WSKP.ARK        16384  11-29-87  Redefine keypad for Kaypro/WordStar	/walnut-cpm/KAYPRO/WSKP.ARK	gopher.jblangston.com	70
+i___________________________________________________________________		null.host	1
+i                 Gophered by Gophernicus/3.1.1 on Debian/12 x86_64		null.host	1
+.
