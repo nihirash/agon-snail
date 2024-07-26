@@ -149,20 +149,50 @@ menu.item:
     jp (hl)
 
 menu.back:
-menu.home:
 menu.reload:
-menu.open_location:
 menu.save_buffer:
-    ld hl, @msg
-    ld a, ui.msgbox.INFO
-    call ui.msgbox
-    MOSCALL mos_getkey
-    
+    call not_implemented
+
     ld hl, (process_function)
     jp (hl)
+
+menu.open_location:
+    ld a, ui.msgbox.INPUT
+    ld hl, @msg
+    call ui.msgbox
+
+    ld hl, url.rendered
+    ld bc, 68
+    ld e, 0
+    MOSCALL mos_editline
+    cp 27
+    jr z, @cancel
     
+    call vdp.hide_cursor
+
+    ld hl, url.rendered
+    call url.parse
+    call url.render
+    call fetcher.get
+
+    jp gopher_page.init
+@cancel:
+    call vdp.hide_cursor
+    call url.render
+    jp gopher_page.init
 @msg:
-    db "Generic menu item handler", 0
+    db "Enter new location:"
+    VDP_GOTO_XY 15, 28
+    VDP_CURSOR 1
+    db 0
+
+menu.home:
+    ld hl, url.home
+    call url.parse
+    call url.render
+    call fetcher.get
+
+    jp gopher_page.init
 
 menu.exit:
     ld hl, (process_function)

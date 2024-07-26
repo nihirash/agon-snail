@@ -1,6 +1,11 @@
+;; Snail - gopher browser for Agon's MOS
+;; (c) 2023-2024 Aleksandr Sharikhin
+;;
+;; All rights are reserved
 
 url.rendered:
-    db 68
+    ds 68
+
 url.domain:
     ds 32
 url.port:

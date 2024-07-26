@@ -1,3 +1,8 @@
+;; Snail - gopher browser for Agon's MOS
+;; (c) 2023-2024 Aleksandr Sharikhin
+;;
+;; All rights are reserved
+
 ;; HL - URL
 url.parse:
     push hl
@@ -50,6 +55,13 @@ url.port_parse.loop:
     cp '/'
     jr z, url.path_parse
 
+    cp '0'
+    jr c, url.on_error
+
+    cp '9' + 1
+    jr nc, url.on_error
+
+
     ld (de), a
     inc de
     djnz url.port_parse.loop
@@ -71,6 +83,9 @@ url.path_parse.loop:
     djnz url.path_parse.loop
 
 url.on_error:
+    xor a
+    ld (de), a
+
     ld hl, @msg
     ld a, ui.msgbox.ERROR
     call ui.msgbox
@@ -133,9 +148,6 @@ url.render:
     xor a
     ld (de), a
     ret
-
-url.test:
-    db "home-page", 0
 
 url.default.port:
     db "70", 0

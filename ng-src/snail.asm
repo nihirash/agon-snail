@@ -14,10 +14,11 @@ DEV:    equ     1
     include "agi.inc"
     include "gopher/page.inc"
     include "url/parser.inc"
+    include "transport/fetcher.inc"
 _main:
     call vdp.init
-
-    ld hl, url.test
+    
+    ld hl, url.home
     call url.parse
     call url.render
 
@@ -28,7 +29,7 @@ _main:
     .endif
 
     call ui.draw_header
-    call buffer.home_page
+    call fetcher.get  
     call gopher_page.init
 
     call vdp.free
@@ -45,21 +46,17 @@ dev_version:
     db "This is development version!", 0
 .endif
 
+not_implemented:
+    ld a, ui.msgbox.ERROR
+    ld hl, @msg
+    call ui.msgbox
+    MOSCALL mos_getkey
+    ret
+@msg:
+    db "NOT IMPLEMENTED", 0
+
 process_function:
     dl 0
-
-buffer.home_page:
-    ld hl, start_page
-    ld de, page_buffer
-    ld bc, start_page.end - start_page
-    ldir
-    ld (buffer_ends), de
-    ret
-
-start_page:
-    incbin "documents/test.gph"
-    db 0
-start_page.end:
 
 buffer_ends:
     dl      page_buffer
