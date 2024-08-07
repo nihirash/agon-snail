@@ -14,10 +14,12 @@ fetcher.home:
     
     ld hl, fetcher.home.d.end-fetcher.home.d
     ld (buffer_ends), hl
-    ret
+    
+    call url.render
+    jp history.push
 
 fetcher.home.d:
-    incbin "documents/test.gph"
+    incbin "documents/home.gph"
     db 0
 fetcher.home.d.end:
 

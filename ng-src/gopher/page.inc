@@ -22,16 +22,15 @@ gopher_page.on_screen:
 gopher_page.last_page:
     db 0
 
-gopher_page.init:
-    ld hl, 0
-    ld (gopher_page.offset), hl
-    ld (gopher_page.cursor), hl
 gopher_page.process:
     ld hl, gopher_page.process
-    ld (process_function), hl
+    ld (url.processor), hl
     call gopher_page.render
 gopher_page.process.keys:
     MOSCALL mos_getkey
+
+    cp KEY_RET
+    jp z, gopher_page.navigate
 
     cp KEY_ESC
     jp z, menu.open
@@ -342,6 +341,15 @@ gopher_page.get_type:
     cp 'I'
     jr z, @down
 
+    cp ';'
+    jr z, @down
+
+    cp ':'
+    jr z, @down
+
+    cp '4'
+    jr z, @down
+
     cp '5'
     jr z, @down
 
@@ -387,10 +395,6 @@ gopher_page.find_under_cursor:
     ret z
     ld b, a
 @loop:
-    ld a, (hl)
-    or a
-    ret z
-
     call gopher_page.printRow.find_eol
     djnz @loop
     ret

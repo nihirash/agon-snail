@@ -149,37 +149,39 @@ menu.item:
     jp (hl)
 
 menu.back:
+    call history.pull
 menu.reload:
+    call history.pull
+    call fetcher.get
+    jr menu.exit
+
 menu.save_buffer:
     call not_implemented
-
-    ld hl, (process_function)
-    jp (hl)
+    jr menu.exit
 
 menu.open_location:
-    ld a, ui.msgbox.INPUT
-    ld hl, @msg
-    call ui.msgbox
 
-    ld hl, url.rendered
+    ld hl, @msg
+    ld de, url.rendered
     ld bc, 68
-    ld e, 0
-    MOSCALL mos_editline
+    ld a, 0
+    call ui.inputbox
     cp 27
     jr z, @cancel
     
     call vdp.hide_cursor
 
+    ld hl, gopher_page.process
+    ld (url.processor), hl
     ld hl, url.rendered
     call url.parse
+    
     call url.render
     call fetcher.get
-
-    jp gopher_page.init
 @cancel:
     call vdp.hide_cursor
     call url.render
-    jp gopher_page.init
+    jr menu.exit
 @msg:
     db "Enter new location:"
     VDP_GOTO_XY 15, 28
@@ -192,10 +194,10 @@ menu.home:
     call url.render
     call fetcher.get
 
-    jp gopher_page.init
+    jp gopher_page.process
 
 menu.exit:
-    ld hl, (process_function)
+    ld hl, (url.processor)
     jp (hl)
 
 menu.quit:

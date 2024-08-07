@@ -5,6 +5,7 @@
 
     include "transport/home.inc"
     include "transport/file.inc"
+    include "transport/network.inc"
 
 ;; Gets document by 
 fetcher.get:
@@ -12,9 +13,13 @@ fetcher.get:
     ld a, ui.msgbox.DOWN
     call ui.msgbox
 
+    ld hl, 0
+    ld (gopher_page.offset), hl
+    ld (gopher_page.cursor), hl
+
 ;; Trying process special "domains" - for home page and for file
     ld hl, url.domain
-    ld a, (hl)
+    ld a, (hl) 
     ;; CAPSize
     and $df
 
@@ -24,16 +29,7 @@ fetcher.get:
     cp 'H'
     jr z, @try_home
 @network:
-    ;; Network :-)
-    ld hl, @netmsg
-    ld a, ui.msgbox.ERROR
-    call ui.msgbox
-
-    MOSCALL mos_getkey
-
-    jr fetcher.on_error
-@netmsg:
-    db "Network is not implemented!", 0
+    jp fetcher.network
 
 @try_file:
     inc hl
@@ -94,9 +90,7 @@ fetcher.on_error:
     call ui.msgbox
     MOSCALL mos_getkey
 
-    ld hl, url.home
-    call url.parse
-    call url.render
+    call history.pull
     jp fetcher.get
 @cmd:
     db "Document fetch error!"

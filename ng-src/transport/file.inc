@@ -18,16 +18,25 @@ fetcher.file:
     ld hl, page_buffer
     ld de, $20000 
     MOSCALL mos_fread
-
+    
     ld hl, page_buffer
     add hl, de
     ld (buffer_ends), hl
+    
+    inc de
+    xor a
+    ld (de), a
+
 
     ld c, 0
     MOSCALL mos_fclose
-    ret
+    call url.render
+    jp history.push
+    
 
 @on_error:
+    call url.render
+    call ui.draw_header
     ld c, 0
     MOSCALL mos_fclose
     jp fetcher.on_error
