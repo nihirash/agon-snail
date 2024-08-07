@@ -4,6 +4,8 @@
 ;; All rights are reserved
 
 gopher_page.navigate:
+    call gopher_page.hide_cursor
+
     call gopher_page.find_under_cursor
     ld a, (hl)
     call gopher_page.get_type
@@ -130,6 +132,10 @@ gopher_page.extract_row_data:
     xor a
     ld (de), a
 
+    ld a, (@data_type)
+    cp gopher_page.INPUT
+    call z, gopher_page.process_input
+
     call fetcher.get
 
 @data_type:  equ $ + 1
@@ -137,6 +143,9 @@ gopher_page.extract_row_data:
     
     ld hl, gopher_page.process
     cp gopher_page.LINK
+    jr z, @exit
+
+    cp gopher_page.INPUT
     jr z, @exit
 
     cp gopher_page.DOWN
@@ -195,3 +204,23 @@ gopher_page.find_filename:
     xor a
     ld (de), a
     ret
+
+gopher_page.process_input:
+    ld hl, url.path
+    ld bc, 4096
+    xor a
+    cpir
+    dec hl
+    ld a, 9
+    ld (hl), a
+    inc hl
+
+    xor a
+    ld (hl), a
+    ld de, @msg
+    ld bc, 68
+    ex de, hl
+    call ui.inputbox
+    ret
+@msg:
+    db "Input your request:", 0

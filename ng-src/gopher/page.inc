@@ -323,6 +323,9 @@ gopher_page.printRow.find_eol:
 
 ;; A - type character of gopher page
 gopher_page.get_type:
+    cp ' '
+    jr z, @info
+
     cp 'i'
     jr z, @info
 
