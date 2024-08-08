@@ -15,6 +15,7 @@ DEV:    equ     1
     include "gopher/page.inc"
     include "gopher/row-handler.inc"
     include "gopher/binary-handler.inc"
+    include "text/page.inc"
     include "url/parser.inc"
     include "transport/fetcher.inc"
     include "history/handler.inc"

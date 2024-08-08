@@ -151,6 +151,10 @@ gopher_page.extract_row_data:
     cp gopher_page.DOWN
     jp z, binary_handler
 
+    ld hl, text_page.process
+    cp gopher_page.TEXT
+    jr z, @exit
+
     call not_implemented
 
     ld hl, menu.quit
