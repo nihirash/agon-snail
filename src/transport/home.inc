@@ -12,7 +12,7 @@ fetcher.home:
     ld de, page_buffer
     ldir
     
-    ld hl, fetcher.home.d.end-fetcher.home.d
+    ld hl, page_buffer + fetcher.home.d.end-fetcher.home.d
     ld (buffer_ends), hl
     
     call url.render
@@ -20,6 +20,6 @@ fetcher.home:
 
 fetcher.home.d:
     incbin "documents/home.gph"
-    db 0
+    dl 0
 fetcher.home.d.end:
 

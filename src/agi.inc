@@ -1,97 +1,104 @@
-	include "agi-ram.inc"
+;; Snail - gopher browser for Agon's MOS
+;; (c) 2023-2024 Aleksandr Sharikhin
+;;
+;; All rights are reserved
 
 show_splash:
-	ld	hl, splash_agi
-show_agi:
-	call	agi_center_image
-	xor 	a
-	call	agon_image_load_from_ram
-	jp	nz, image_error
+    ld hl, splash_agi 
+agi.show:
+    call agi.center_image
+    xor a
+    call agi.load_from_ram
+    jp nz, agi.image_error
 
-	ld 	hl, show_agi_cmd
-	ld	bc, show_agi_end-show_agi_cmd
-	rst.lil	$18
+    ld hl, agi.show_cmd
+    ld bc, agi.show_end-agi.show_cmd
+    rst.lil $18
 
-	MOSCALL	mos_getkey
-	jp	vdp_init
-show_agi_cmd:
-	db 22, 8
-	db 23, 1, 0
-	db 17, 158
-	db 12
-	db 23, 27, 3
-show_agi_coords:
-	dw 30, 30
+    MOSCALL mos_getkey
+    jp vdp.reinit
+agi.show_cmd:
+    VDP_MODE 8
+    VDP_CURSOR 0 
+    VDP_SET_COLOR 158
+    VDP_SET_COLOR 15
+    VDP_CLS
+    db 23, 27, 3 ;; VDP DRAW BITMAP
+agi.show_coords:
+    dw 30, 30
 
-	db 31, 9, 29
-	db "Press key to continue!"
-show_agi_end:
+    VDP_GOTO_XY 9, 29
+    db "Press key to continue!"
+agi.show_end:
 
+;; Shows on error rendering
+agi.image_error:
+    call vdp.reinit
 
-image_error:
-	call vdp_init
-	call msg_box
-	ld hl, @txt
-	call printZ
-	MOSCALL mos_getkey
-	ret
+    ld a, ui.msgbox.ERROR
+    ld hl, @txt
+    call ui.msgbox
+    MOSCALL mos_getkey
+    ret
 @txt:
-	db "Image broken or format not supported!"
-	db 0
-
-agi_center_image:
-	push hl
-	ld de, 4
-	ld bc, 0
-	add hl, de
-
-	ld a, (hl)
-	ld c, a
-	inc hl
-
-	ld a, (hl)
-	ld b, a
-	inc hl
-
-	push hl
-
-	sra b
-	rr  c
-	
-	ld hl, 160
-
-	or a
-	sbc hl, bc
-
-	ld a, l
-	ld (show_agi_coords+0), a
-	ld a, h
-	ld (show_agi_coords+1), a
-
-	pop hl
-	ld a, (hl)
-	ld c, a
-	inc hl
-
-	ld a, (hl)
-	ld b, a
-	
-	sra b
-	rr c
-
-	or a
-	ld hl, 120
-	sbc hl, bc
-
-	ld a, l
-	ld (show_agi_coords+2), a
-	ld a, h
-	ld (show_agi_coords+3), a
-
-	pop hl
-	ret
+    db "Image broken or format not supported!", 0
 
 
+agi.center_image:
+    push hl
+    ld de, 4
+    ld bc, 0
+    add hl, de
+
+    ld a, (hl)
+    ld c, a
+    inc hl
+
+    ld a, (hl)
+    ld b, a
+    inc hl
+
+    push hl
+
+    sra b
+    rr c
+
+    ld hl, 160
+    or a 
+    sbc hl, bc
+
+    ld a, l 
+    ld (agi.show_coords), a
+    ld a, h
+    ld (agi.show_coords + 1), a
+
+    pop hl
+
+    ld a, (hl)
+    ld c, a
+    inc hl
+
+    ld a, (hl)
+    ld b, a
+
+    sra b
+    rr c
+
+    or a
+    ld hl, 120
+    sbc hl, bc
+
+    ld a, l
+    ld (agi.show_coords + 2), a
+    ld a, h
+    ld (agi.show_coords + 3), a
+
+    pop hl
+    ret
+
+    .if DEV
+    .else
 splash_agi:
-	incbin "splash.agi"
+	incbin "binaries/splash.agi"
+    .endif
 	

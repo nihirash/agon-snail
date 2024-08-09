@@ -167,7 +167,7 @@ gopher_page.render:
     call gopher_page.get_type
     ex af, af'
 
-    call gopher_page.printRow.find_eol
+    call gopher_page.print_row.find_eol
 
 @do_check:
     ex af, af'
@@ -264,30 +264,35 @@ gopher_page.render_row.clean:
     call gopher_page.get_type
     call vdp.set_color
 
-    jp gopher_page.printRow
+    jp gopher_page.print_row
 @offset:
     blkb gopher_page.PADDING, 32
 
-gopher_page.printRow:
-    ld b, 70
-@loop:
+gopher_page.print_row:
+    ld b, 69
+gopher_page.print_row.loop:
     ld a, (hl)
     and a
     ret z
     
     inc hl
+
+    cp $5c
+    jr z, gopher_page.print_row.control
+
     cp 13
-    jp z, gopher_page.printRow.check_eol
+    jp z, gopher_page.print_row.check_eol
 
     cp 10
     ret z
 
     cp 09
-    jp z, gopher_page.printRow.find_eol
+    jp z, gopher_page.print_row.find_eol
 
     cp 32
-    jr c, @skip
+    jr c, gopher_page.print_row.skip
 
+gopher_page.print_row.putc:
     push bc
     push hl
     call putc
@@ -295,18 +300,18 @@ gopher_page.printRow:
     pop bc
 
     dec b
-@skip:
+gopher_page.print_row.skip:
     ld a, b
     or a 
-    jp z, gopher_page.printRow.find_eol
-    jr @loop
-gopher_page.printRow.check_eol:
+    jp z, gopher_page.print_row.find_eol
+    jr gopher_page.print_row.loop
+gopher_page.print_row.check_eol:
     ld a, (hl)
     cp 10
     ret nz 
     inc hl
     ret
-gopher_page.printRow.find_eol:
+gopher_page.print_row.find_eol:
     ld a, (hl)
     or a 
     ret z
@@ -314,12 +319,90 @@ gopher_page.printRow.find_eol:
     inc hl
 
     cp 13
-    jr z, gopher_page.printRow.check_eol
+    jr z, gopher_page.print_row.check_eol
 
     cp 10
     ret z
-    jr gopher_page.printRow.find_eol
+    jr gopher_page.print_row.find_eol
+gopher_page.print_row.slash:
+    inc hl
+    jr gopher_page.print_row.putc
+gopher_page.print_row.control:
+    ld a, (hl)
+    or a
+    ret z
 
+    cp $5c
+    jr z, gopher_page.print_row.slash
+
+    call @check_num
+
+    ld d, a
+    inc hl
+
+    ld a, (hl)
+    or a 
+    ret z
+    inc hl
+
+    ld e, a
+    
+    ld a, d
+    call @h1
+    add a, a
+    add a, a
+    add a, a
+    add a, a
+    ld d, a
+    ld a, e
+    call @h1
+    or d
+
+    push bc
+    push hl
+    push af
+    ld a, 17
+    call putc
+    pop af
+    call putc
+    pop hl
+    pop bc
+
+    jr gopher_page.print_row.skip
+@h1:
+    sub '0'
+    cp 10
+    ret c
+    sub 'A'-'0'-10
+    ret
+
+@check_num:
+    push bc
+    push hl
+    ld hl, @nums
+    ld bc, @end-@nums
+    cpir 
+    pop hl
+    pop bc
+    ret z
+    ;; Prevent stack leak
+    pop de
+
+    push hl
+    push bc
+    push af
+    ld a, '\'
+    call putc
+    pop af
+    pop bc
+    pop hl
+    dec b
+    jr gopher_page.print_row.slash
+
+
+@nums:
+    db "1234567890ABCDEFabcdef"
+@end:
 
 ;; A - type character of gopher page
 gopher_page.get_type:
@@ -398,7 +481,7 @@ gopher_page.find_under_cursor:
     ret z
     ld b, a
 @loop:
-    call gopher_page.printRow.find_eol
+    call gopher_page.print_row.find_eol
     djnz @loop
     ret
 
@@ -413,7 +496,7 @@ gopher_page.find_line:
     or a
     jr z, @empty
 
-    call gopher_page.printRow.find_eol
+    call gopher_page.print_row.find_eol
 
     dec bc
     ld a, b

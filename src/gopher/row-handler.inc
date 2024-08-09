@@ -4,8 +4,6 @@
 ;; All rights are reserved
 
 gopher_page.navigate:
-    call gopher_page.hide_cursor
-
     call gopher_page.find_under_cursor
     ld a, (hl)
     call gopher_page.get_type
@@ -15,10 +13,15 @@ gopher_page.navigate:
 
     cp gopher_page.UNKNOWN
     jr z, @exit
-
+    push af
+    push hl
+    call gopher_page.hide_cursor
+    pop hl
+    pop af
     jr gopher_page.extract_row_data
 
 @exit:
+
 ;; No rerender even
     jp gopher_page.process.keys
 
@@ -152,12 +155,6 @@ gopher_page.extract_row_data:
     jp z, binary_handler
 
     ld hl, text_page.process
-    cp gopher_page.TEXT
-    jr z, @exit
-
-    call not_implemented
-
-    ld hl, menu.quit
 @exit:
     ld (url.processor), hl
     jp menu.exit

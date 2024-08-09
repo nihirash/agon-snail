@@ -1,0 +1,37 @@
+ \0AS\0Bn\0Ca\0di\0el\0F is Gopher browser\07(and gophermap viewer)\0F for Agon Light 
+ and Console8
+ (c) 2024 Aleksandr Sharikhin aka Nihirash
+
+ For best experience use it with Espressif WiFi module with ESP-AT
+ firmware but you can use it totally offline too.
+ Network features are tested only with \09Olimex\0f's \09MOD-WIFI-ESP8266
+ 
+ This version can render gophermaps, plain text and .AGI files from
+ network or local file system.
+ 
+ Controls:
+
+  \01*\0f \0aCursor\0f - navigation
+  \01*\0f \0aESC\0f - toggle between page and gopher menu
+  \01*\0f \0aEnter\0f - select menu item or navigate to page
+
+ Limitations:
+
+  \01*\0f Downloads supported for files that a bit less than half of megabyte
+  \01*\0f History have limited depth
+  \01*\0f Tested only with Olimex's MOD-WIFI-ESP8266
+  \01*\0f Manually entered URL always interpreted as link to gophermap 
+
+ \03Some Agon-related resources:
+1 -> Nihirash's personal gopherspace	/	nihirash.net	70
+1 -> Eightbitswide 8bit Gopher Hole	/	agon.gunstar.one	70
+1 -> 8-Bit noob gopher hole	/	8bitnoob.duckdns.org	70
+1 -> J.B.Langston's Retro Gopherhole	/	gopher.jblangston.com	70
+
+ \03And some just usual gopher resources: 
+1 -> SDF Public Access UNIX System	/	sdf.org	70
+1 -> I-Logout.cz. Contains phlog aggreagtor	/	i-logout.cz	70
+1 -> Floodgap Systems' server	/	gopher.floodgap.com	70
+1 -> Gopherpedia.com - wikipedia in your gopher browser	/	gopherpedia.com	70
+1 -> Hacker News gopher mirror	/	hngopher.com	70
+1 -> Mozz.us	/	mozz.us	70

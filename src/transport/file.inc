@@ -23,10 +23,9 @@ fetcher.file:
     add hl, de
     ld (buffer_ends), hl
     
-    inc de
+    inc hl
     xor a
-    ld (de), a
-
+    ld (hl), a
 
     ld c, 0
     MOSCALL mos_fclose

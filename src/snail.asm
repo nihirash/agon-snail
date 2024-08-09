@@ -1,50 +1,90 @@
-MAX_ARGS: EQU 2
-	include "crt.inc"
-	include "tcp.inc"
-	include "vdp.inc"
-	include "gopher-page.inc"
-	include "gopher.inc"
-	include "top-menu.inc"
-	include "agi.inc"
-	include "binary-handler.inc"
+;; Snail - gopher browser for Agon's MOS
+;; (c) 2023-2024 Aleksandr Sharikhin
+;;
+;; All rights are reserved
+
+DEV:    equ     0
+
+    include "init.inc"
+    include "mos.inc"
+    include "vdp.inc"
+    include "ui.inc"
+    include "top-menu.inc"
+    include "agi-ram.inc"
+    include "agi.inc"
+    include "gopher/page.inc"
+    include "gopher/row-handler.inc"
+    include "gopher/binary-handler.inc"
+    include "text/page.inc"
+    include "url/parser.inc"
+    include "transport/fetcher.inc"
+    include "history/handler.inc"
 _main:
-	call show_splash
+    ld hl, __bss.start
+    ld de, __bss.start + 1
+    ld bc, __bss.end - __bss.start
+    xor a
+    ld (hl), a
+    ldir
 
-	call msg_box
-	ld hl, txt_esp
-	call printZ
+    call vdp.init
+    
+    ld hl, (args)
+    ld a, (hl)
+    
+    ld hl, url.home
+    and a
+    jr z, @noargs
+    ld hl, (args)
+@noargs:
+    call url.parse
+    call url.render
+    ld hl, gopher_page.process
+    ld (url.processor), hl
 
-	call tcp_init
+    ld b, history.DEPTH
+@history_fill:
+    push bc
+    call history.push
+    pop bc
+    djnz @history_fill
 
-	call go_home
+    ld hl, (args)
+    ld a, (hl)
+    and a
+    jr nz, @skip_logo
 
-	call esp_free
-	call vdp_close
-	ret
-go_home:
-	xor a
-	ld (selected_button), a 
-	ld (history_act), a
+    .if DEV
+    call dev_version
+    .else
+    call show_splash
+    .endif
+    
+@skip_logo:
+    call ui.draw_header
+    call fetcher.get  
+    call gopher_page.process
 
-	ld hl, home_page
-	ld de, page_buffer
-	ld bc, home_page_end - home_page
-	ldir
+    call vdp.free
+    ret
 
-	ld (buffer_ends), de
+.if DEV
+dev_version:
+    ld hl, @msg
+    ld a, ui.msgbox.INFO
+    call ui.msgbox
+    MOSCALL mos_getkey
+    ret
+@msg:
+    db "This is development version!", 0
+.endif
 
-	call gopher_page_init
-	call gopher_render
-	jp gopher_loop
-	
+__bss.start:
 
-txt_esp:
-	db "Initing ESP8266. If we stuck here - issue with it!", 0
+buffer_ends:
+    dl      page_buffer
 
-home_page:
-	incbin "home.gph"
-	dl 0
-home_page_end:
-	
-	include "history.inc"
+    include "history/buffers.inc"
 page_buffer:
+
+__bss.end:
