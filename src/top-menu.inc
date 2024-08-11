@@ -1,161 +1,249 @@
-go_menu:
-	ld a, 1
-	ld (selected_button), a
-menu_loop:
-	call ui_buttons
-	MOSCALL mos_getkey
+;; Snail - gopher browser for Agon's MOS
+;; (c) 2023-2024 Aleksandr Sharikhin
+;;
+;; All rights are reserved
 
-	cp 27
-	jp z, exit
+;; Top menu part
 
-	cp 8
-	jr z, menu_left
+menu.buttons.count:   EQU     6
+menu.selected_button: db      0
 
-	cp 21
-	jr z, menu_right
 
-	cp 13
-	jr z, menu_item
+menu.buttons_list:
+    db "[Back]", 0
+    db "[Home page]", 0
+    db "[Reload]", 0
+    db "[Open location]", 0
+    db "[Save buffer]", 0
+    db "[Quit]", 0
 
-	jr menu_loop
+menu.functions:
+    dl menu.back
+    dl menu.home
+    dl menu.reload
+    dl menu.open_location
+    dl menu.save_buffer
+    dl menu.quit
 
-menu_left:
-	ld a, (selected_button)
+menu.draw_buttons:
+    ld bc, $0300
+    call vdp.goto_xy
+    call menu.draw_buttons.real
+    call ui.clean_line
 
-	cp 1
-	jr z, menu_loop
+    ld b, menu.buttons.count
+    ld a, (menu.selected_button)
+    ld c, a
+    ld a, menu.buttons.count + 1
+    sub c
+    ld c, a
 
-	dec a
-	ld (selected_button), a
-	jr menu_loop
+    ld hl, menu.buttons_list
+@loop:
+    push bc
 
-menu_right:
-	ld a, (selected_button)
-	
-	cp buttons_total
-	jr nc, menu_loop
+    push hl
+    call menu.draw_buttons.real
+    
+    ld a, 32
+    call putc
 
-	inc a
-	ld (selected_button), a
-	jr menu_loop
+    pop hl
+    pop bc
+    push bc
+    push hl
 
-menu_item:
-	ld a, (selected_button)
-	cp buttons_total
+    ld a, b
+    cp c
+    push af
+    call z, menu.draw_buttons.inv
+    pop af
+    call nz, menu.draw_buttons.real
+
+    pop hl
+    call menu.printHL
+
+    pop bc
+    djnz @loop
+
+
+    ret
+
+menu.printHL:
+	ld a, (hl)
+	inc hl
+	and a
 	ret z
-
-	cp 3
-	jp z, gopher_process
-
-	cp 4
-	jr z, domain
-
-	cp 1
-	jr z, m_back
-
-	cp 2
-	jp z, go_home
-
-	cp 5
-	jr z, save_buffer
-
-	jr menu_loop
-
-save_buffer:
-	call cursor_on
-
-	call msg_box
-	ld hl, str_out_file
-	call printZ
-
-	ld hl, down_filename
-	ld bc, 60
-	ld e, 0
-
-	MOSCALL mos_editline
-	cp 27
-	jp z, @exit
-	
-	ld hl, (buffer_ends)
-	ld de, page_buffer
-	or a
-	sbc hl, de
 	push hl
-	pop bc
+	call putc
+	pop hl
+	jr menu.printHL
 
-	ld hl, down_filename
-	ld de, page_buffer
-	MOSCALL	mos_save
+menu.draw_buttons.inv:
+    SEND_VDP_CMD
+    ret
+@cmd:
+    VDP_SET_COLOR $84
+    VDP_SET_COLOR $0F
+@end:
+
+menu.draw_buttons.real:
+    SEND_VDP_CMD
+    ret
+@cmd:
+    VDP_SET_COLOR $87
+    VDP_SET_COLOR $04
+@end:
+
+menu.open:
+    ld a, 1
+    ld (menu.selected_button), a
+menu.loop:
+    call menu.draw_buttons
+    MOSCALL mos_getkey
+
+    cp KEY_ESC
+    jp z, menu.exit
+
+    cp KEY_RIGHT
+    jr z, menu.right
+
+    cp KEY_LEFT
+    jr z, menu.left
+
+    cp KEY_RET
+    jr z, menu.item
+
+    jr menu.loop
+
+
+menu.right:
+    ld a, (menu.selected_button)
+    cp menu.buttons.count
+    jr nc, menu.loop
+
+    inc a
+    ld (menu.selected_button), a
+    jr menu.loop
+
+menu.left:
+    ld a, (menu.selected_button)
+    or a
+    jr z, menu.loop
+
+    dec a
+    ld (menu.selected_button), a
+    jr menu.loop
+
+menu.item:
+    ld a, (menu.selected_button)
+    dec a
+    ld l, a
+    ld h, 3
+    mlt hl
+    
+    ld de, menu.functions
+    add hl, de
+
+    ld hl, (hl)
+    jp (hl)
+
+menu.back:
+    call history.pull
+menu.reload:
+    call history.pull
+    call fetcher.get
+    jp menu.exit
+
+menu.save_buffer:
+    call gopher_page.find_filename
+    
+    ld de, url.filename
+    ld bc, 4096
+    ld hl, @msg
+    ld a, 0
+    call ui.inputbox
+    
+    cp 27
+    jp z, @exit
+
+    ld c, 0
+    MOSCALL mos_fclose
+
+    ld hl, url.filename
+    ld c, fa_cr_always + fa_write
+    MOSCALL mos_fopen
+    or a
+    jp z, @on_error
+    ld c, a
+
+    ld hl, (buffer_ends)
+    ld de, page_buffer
+    
+    or a
+    sbc hl, de
+    ex de, hl
+    MOSCALL mos_fwrite
 @exit:
-	call cursor_off
-	jp exit
+    ld c, 0
+    MOSCALL mos_fclose
 
+    jp menu.exit
+@msg:
+    db "File name:", 0 
+@on_error:
+    ld c, 0
+    MOSCALL mos_fclose
 
-m_back:
-	call history_pull
-	jr z, exit
-	jp gopher_process
+    ld a, ui.msgbox.ERROR
+    ld hl, @err_msg
+    call ui.msgbox
+    MOSCALL mos_getkey
 
-domain:
-	ld de, $0108
-	call goto_xy
+    jp menu.exit
+@err_msg:
+    db "File saving error!", 0
 
-	xor a
-	call set_bg
-	ld a, 11
-	call set_fg
+menu.open_location:
 
-	call cursor_on
-	
-	ld hl, host
-	ld bc, 64
-	ld e, 0
-	MOSCALL mos_editline
-	push af
-	call cursor_off
-	pop af
-	cp 27
-	jp z, text_loop
-	
-	ld hl, request
-	ld a, '/'
-	ld (hl), a
-	inc hl
+    ld hl, @msg
+    ld de, url.rendered
+    ld bc, 68
+    ld a, 0
+    call ui.inputbox
+    cp 27
+    jr z, @cancel
+    
+    call vdp.hide_cursor
 
-	ld a, 13
-	ld (hl), a
-	inc hl
+    ld hl, gopher_page.process
+    ld (url.processor), hl
+    ld hl, url.rendered
+    call url.parse
+    
+    call url.render
+    call fetcher.get
+@cancel:
+    call vdp.hide_cursor
+    call url.render
+    jp menu.exit
+@msg:
+    db "Enter new location:"
+    VDP_GOTO_XY 15, 28
+    VDP_CURSOR 1
+    db 0
 
-	ld a, 10
-	ld (hl), a
-	inc hl
+menu.home:
+    ld hl, url.home
+    call url.parse
+    call url.render
+    call fetcher.get
 
-	xor a
-	ld (hl), a
+    jp gopher_page.process
 
-	ld hl, str_port
-	ld a, '7'
-	ld (hl), a
-	inc hl
+menu.exit:
+    ld hl, (url.processor)
+    jp (hl)
 
-	ld a, '0'
-	ld (hl), a
-	inc hl
-
-	xor a
-	ld (hl), a
-	ld (row_type), a
-	jp gopher_process 
-
-exit:
-	xor a
-	ld (selected_button), a
-	ld a, (row_type)
-	and a 
-	jr z, @go
-	call text_render
-	jp text_loop
-@go:
-	call gopher_render
-	jp gopher_loop
-
+menu.quit:
+    ret

@@ -1,4 +1,10 @@
 emul/
 emul.sh
+send.sh
 tmp/
 .DS_Store
+ng-src/*.bin
+*.lst
+send.py
+/snail.bin
+*.agi

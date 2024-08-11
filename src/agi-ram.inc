@@ -7,7 +7,7 @@
 ;; Extracts image from ram to VDP buffer
 ;; A - buffer number
 ;; HL - pointer to agon image
-agon_image_load_from_ram:
+agi.load_from_ram:
 ;; Store buffer ID to vars
     ld (@buff), a
     ld (@buff1), a

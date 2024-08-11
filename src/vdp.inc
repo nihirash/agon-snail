@@ -1,309 +1,114 @@
-;; Inits screen
-vdp_init:
-	ld hl, @cmd
-	ld bc, vdp_cls-@cmd
-	rst.lil $18
-	ret
+;; Snail - gopher browser for Agon's MOS
+;; (c) 2023-2024 Aleksandr Sharikhin
+;;
+;; All rights are reserved
+
+    macro VDP_MODE n
+    db 22, n
+    endmacro
+
+    macro VDP_CURSOR n
+    db 23, 1, n
+    endmacro
+    
+
+    macro VDP_DRAW_BITMAP x, y, n
+    db 23, 27, $20
+    dw n
+    db 23, 27, 3
+    dw x, y
+    endmacro
+
+    macro VDP_GOTO_XY x, y
+    db 31, x, y
+    endmacro
+
+    macro VDP_SET_COLOR c
+    db 17, c
+    endmacro
+
+    macro VDP_CLS
+    db 12
+    endmacro
+
+    macro SEND_VDP_CMD
+    ld hl, @cmd
+    ld bc, @end-@cmd
+    rst.lil $18
+    endmacro
+
+vdp.init:
+    MOSCALL mos_sysvars
+    ld  a, (ix + mosvar_vdp_mode)
+    ld (vdp.free + 1), a
+    ;; Loading images
+
+    ; MsgBox INFO icon
+    ld a, ui.msgbox.INFO
+    ld hl, ui.image.info
+    call agi.load_from_ram
+
+    ; MsgBox ERROR icon
+    ld a, ui.msgbox.ERROR
+    ld hl, ui.image.error
+    call agi.load_from_ram
+
+    ; MsgBox INPUT icon
+    ld a, ui.msgbox.INPUT
+    ld hl, ui.image.input
+    call agi.load_from_ram
+
+    ; MsgBox DOWNLOADING icon
+    ld a, ui.msgbox.DOWN
+    ld hl, ui.image.down
+    call agi.load_from_ram
+
+vdp.reinit:
+    SEND_VDP_CMD
+    ret
 @cmd:
-	db 22, 0 ;; Mode 0(640x480)
-	db 23, 1, 0 ;; Hide cursor
-	db 23, 27, 0, 0
-	db 23, 27, 1
-	dw 32, 32
-	incbin "info.rgba"
-
-@end:	db 0
-
-;; Clear screen
-vdp_cls:
-	ld a, 12
-	jp putc
-
-
-cursor_on:
-	ld hl, @cmd
-	ld bc, @end-@cmd
-	rst.lil $18
-	ret
-@cmd:
-	db 23, 1, 1
+    VDP_MODE   0  ;; 640x480
+    VDP_CURSOR 0
 @end:
 
-cursor_off:	
-	ld hl, @cmd
-	ld bc, @end-@cmd
-	rst.lil $18
-	ret
+vdp.hide_cursor:
+    SEND_VDP_CMD
+    ret
 @cmd:
-	db 23, 1, 0
+    VDP_CURSOR 0
 @end:
 
-;; DE - xy
-goto_xy:
-	push de
-	ld a, 31
-	call putc
-	pop de
-	push de
-	ld a, e
-	call putc
-	pop de
-	ld a, d
-	call putc
-	ret
+;; BC - coords
+vdp.goto_xy:
+    ld a, 31
+    rst.lil $10
+    
+    ld a, c
+    rst.lil $10
 
-; A - color
-set_fg:
-	and 63
-set_color:	
-	push af
-	ld a, 17
-	call putc
-	pop af
-	call putc
-	ret
+    ld a, b
+    rst.lil $10
+    ret
 
-; A - color
-set_bg:
-	or $80
-	jr set_color
+vdp.set_color:
+    push af
+    ld a, 17
+    rst.lil $10
+    pop af
+    rst.lil $10
+    ret
 
-vdp_close:
-	ld hl, @cmd
-	ld bc, @end-@cmd
-	rst.lil $18
-	ret
+;; Restoring videomode, restoring cursor and black and white attributes
+vdp.free:
+    ld a, 1
+    ld (@cmd + 1), a
+
+    SEND_VDP_CMD
+    ret
 @cmd:
-	db 22, 1
-	db 17, 7, 17, $80
-	db 23, 1, 1
-	db 12
+    VDP_MODE 0
+    VDP_SET_COLOR $80
+    VDP_SET_COLOR $F
+    VDP_CURSOR 1
+    VDP_CLS
 @end:
-
-;; Print not more than 70 symbols and waiting for any separator
-;; like cr/lf/tab/zero
-;; HL - string ptr
-print70G:
-	ld b, 70
-@loop:
-	ld a, (hl)
-	
-	and a
-	ret z
-
-	cp 13
-	ret z
-
-	cp 10
-	ret z
-	
-	cp 09
-	ret z
-
-	cp 32
-	jr c, @skip
-
-	push bc
-	push hl
-	call putc
-	pop hl
-	pop bc
-	dec b
-@skip:
-	inc hl
-	;; This happens cause we need skip unprintable things
-	ld a, b
-	or a
-	ret z
-	jr @loop
-
-;; Print not more than 70 symbols and waiting for text line separator
-;; HL - string ptr
-print80T:
-	ld b, 79
-@loop:
-	ld a, (hl)
-	
-	and a
-	ret z
-
-	cp 13
-	ret z
-
-	cp 10
-	ret z
-	
-	cp 32
-	jr c, @skip
-
-	push bc
-	push hl
-	call putc
-	pop hl
-	pop bc
-	dec b
-@skip:
-	inc hl
-	;; This happens cause we need skip unprintable things
-	ld a, b
-	or a
-	ret z
-	jr @loop
-
-
-ui_header:
-	xor a
-	call set_bg
-
-	call vdp_cls
-	ld a, 4
-	call set_bg
-	ld a, 11
-	call set_fg
-
-	ld hl, @title
-	call printZ	
-
-	xor a 
-	call set_bg
-	ld a, 11
-	call set_fg
-
-	ld hl, @line
-	call printZ
-	ld de, $0108
-	call goto_xy
-
-	ld hl, host
-	call printZ
- 
-	call ui_buttons
-	ret
-@title:
-	db " Snail - Gopher browser for Agon Light v.0.5 (c)"
-	db " 2024 Aleksandr Sharikhin       "
-	db 0
-@line:
-	db " Host: ["
-	blkb 64, 32
-	db "]", 0
-
-buttons_total: equ 6
-ui_buttons:
-	ld de, $0200
-	call goto_xy
-	call real_video
-	ld hl, spacer
-	call printZ
-
-	ld b, buttons_total
-	ld a, (selected_button)
-	ld c, a
-	ld a, buttons_total+1
-	sub c
-	ld c, a
-
-	ld hl, @buttons
-@loop:
-	push bc
-
-	push hl
-	call real_video
-
-	ld a, 32
-	call putc
-	pop hl
-	pop bc
-	push bc
-	push hl
-
-	ld a, b
-	cp c
-	push af
-	call z, inv_video
-	pop af
-	call nz, real_video
-
-	pop hl
-	call printHL
-	pop bc
-	djnz @loop
-
-	ld a, 13
-	call putc
-	ld a, 10
-	call putc
-
-	ret
-@buttons:
-	db "[Back]", 0
-	db "[Home]", 0
-	db "[Reload]", 0
-	db "[Open server]",0
-	db "[Save buffer]",0
-	db "[Quit]", 0
-
-printHL:
-	ld a, (hl)
-	inc hl
-	and a
-	ret z
-	push hl
-	call putc
-	pop hl
-	jr printHL
-
-
-inv_video:
-	ld a,4 
-	call set_bg
-	ld a, 15
-	call set_fg
-	ret
-
-real_video:
-	ld a, 7
-	call set_bg
-	ld a, 4
-	call set_fg
-	ret
-
-selected_button: db 0
-
-spacer: blkb 80, 32
-	db 13, 11, 0
-
-
-msg_box:
-	ld hl, @cmd
-	ld bc, @end-@cmd
-	rst.lil $18
-	ret
-@cmd:
-	db 31, 8, 25
-	db 17, $84, 17, 15
-	blkb 64, 32
-
-	db 31, 8, 26
-	blkb 64, 32
-
-	db 31, 8, 27
-	blkb 64, 32
-
-	db 31, 8, 28
-	blkb 64, 32
-
-	db 31, 8, 29
-	blkb 64, 32
-
-	db 31, 8, 30
-	blkb 64, 32
-
-	db 23, 27, 0, 0
-	db 23, 27, 3
-	dw 72, 208
-
-	db 31, 15, 27
-@end:
-
-
