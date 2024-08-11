@@ -1,6 +1,6 @@
 # Snail - fast gopher browser(and gophermap viewer) for Agon computers
 
-![Screen photo](gh-docs/screen.png)
+![Screen photo](gh-docs/emul.png)
 
 ## Requirements
 
