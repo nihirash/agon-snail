@@ -1,4 +1,4 @@
-# Snail - fast gopher browser for Agon Light(and Agon Light 2)
+# Snail - fast gopher browser(and gophermap viewer) for Agon computers
 
 ![Screen photo](gh-docs/screen.png)
 
@@ -10,43 +10,25 @@
 
 ## Usage
 
-### First time preparing(should be made only once)
+Put browser to `/bin` directory of SD card.
 
- * Download `netman` and connect to access point via it
+Usual use case - just call `snail` as command and it will be loaded with home page or call it with URL as argument - `snail nihirash.net/agon` - and snail will try load specified path as URL.
 
- * Download `esp-at-tester` and execute it(This step should be replaced with `esp-update` but it don't work correctly and I don't know why)
- 
- * Check firmware version with `AT+GMR` command(they're case sensitive). If it less than `1.7.5.0(Oct 20 2021)`:
- 
-    + Call Over The Air update with command `AT+CIUPDATE`
- 
-    + When it will be completed check firmware version with `AT+GMR` - it should be `1.7.5.0(Oct 20 2021)` or later
- 
-    + Reset your wifi module with `AT+RST` command and restore "factory defaults" with command `AT+RESTORE`
- 
-    + Exit from this utility with `BYE` command
- 
-    + Run `netman` again and connect access point.
+Also you can load gophermaps from Agon's SD card(and use Snail as simple hypertext viewer) - just add `file:/` prefix before file name, for example `snail file:/test.gph` will load `test.gph` from current directory or `snail file://path/to/file.gph` will load `file.gph` from `/path/to/` directory.
 
-### Actual usage
+## Writing yourown gophermaps(for local or even network usage)
 
- * Copy `snail.bin` to your `/bin/` directory and call it with `snail` command
+Gophermaps are just plaintext files(with CRLF line ending). 
 
- * If you'll load `.AGI` graphics file - it will be shown on 320x240x64 mode
+Good description of line format is explained at [wikipedia](https://en.wikipedia.org/wiki/Gopher_(protocol)#Source_code_of_a_menu). But Snail allows you cut some edges - for example just text rows can be written even without path, domain and port part, keeping just data type and text value.
+
+From another side Snail got minor extension - it allows specify text color(can be applied to the end of line). For setting current color use `\xx` sequence, where `xx` is hex. number of color.
+
+Also you can include images on your resources(in `.AGI` format) - just make link to it as binary. If file have `.AGI` extension - it will be automatically processed as IMAGE and shown on screen(in 320x240 with 64 colors mode).
 
 ## Development
 
-Code written directly on Agon Light and compiled with [agon-ez80asm](https://github.com/envenomator/agon-ez80asm). I'm strongly recommend use latest version of ez80asm - cause it updates often and goes better and better every day.
-
-I'm using [Nano](https://github.com/lennart-benschop/agon-utilities) text editor for Agon Light for writting code directly on Agon.
-
-## Known bugs and limitations
-
- * TCP error handling isn't implemented correctly yet. But in most cases it should work fine
-
- * History don't care about "Home" page
-
- * Downloading files can't be larger than free ram size(cause all files downloading into RAM and saving after it).
+Code written compiled with [agon-ez80asm](https://github.com/envenomator/agon-ez80asm). I'm strongly recommend use latest version of ez80asm - cause it updates often and goes better and better every day.
 
 ## Licensing
 

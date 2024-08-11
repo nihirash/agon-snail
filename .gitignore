@@ -6,5 +6,5 @@ tmp/
 ng-src/*.bin
 *.lst
 send.py
-snail.bin
+/snail.bin
 *.agi
